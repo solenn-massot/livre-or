@@ -1,3 +1,27 @@
+@font-face {
+    font-family: 'heartless';
+    src: url('police/Heartless.ttf') format('TrueType');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'morris';
+    src: url('police/MorrisRomanBlack.otf') format('OpenType');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'medusa';
+    src: url('police/MedusaGothic.otf') format('OpenType');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'sigali';
+    src: url('police/Sigali-Script.ttf') format('TrueType');
+    font-weight: normal;
+    font-style: normal;
+}
 body{
     margin: 0;
     width: 100%;
@@ -6,7 +30,7 @@ body{
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-row-gap: 10px;
     background-color: #ffffff60;
     flex-direction: column;
     background-image: url("image/background.jpg");
@@ -15,17 +39,170 @@ body{
     background-size: cover;
     background-position: right;
 }
-main{
-    grid-area: 5 / 1 / 6 / 6;
-}
 header{
     grid-area: 1 / 1 / 2 / 6;
+}
+main{
+    grid-area: 2 / 2 / 5 / 5;
+    display:flex;
+    flex-direction: column-reverse;
 }
 nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 100px;
-    background-color: rgba(27, 97, 76, 0.61);
+    background-color: rgb(19, 68, 53); 
+}
+#logo-nav{
+    height: 95%;
+}
+.link-nav{
+    text-decoration:none;
+    font-family: 'sigali';
+    color: white;
+    font-size: 100%;
+}
+.link-nav:hover{
+    font-family: 'medusa';
+    text-decoration: underline;
+    font-size: 100%;
+}
+.button1 {
+	background: rgb(19, 68, 53);
+	padding: 8px 15px 8px 15px;
+	border: none;
+    color: #fff;
+    font-family: 'medusa';
+    font-size: 120%;
+    justify-items: right;
+}
+.button1:hover{
+    background: rgb(19, 68, 53);
+    text-decoration:underline;
+	box-shadow:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+}
+/*------------FOOTER------------*/
+footer{
+    grid-area: 5 / 1 / 6 / 6;
+}
+/*------------INDEX-------------*/
+.div-index{
+    background-color: rgba(255, 255, 255, 0.25);
+    grid-area: 2 / 2 / 5 / 5;
+    text-align: center;
+    height: auto;
+    padding: 5%;
+    line-height: 250%;
+}
+.text-index{
+    font-family: 'medusa';
+    font-size: 150%;
+}
+.link-index{
+    text-decoration: none;
+    color: black;
+}
+.link-index:hover{
+    text-decoration: underline;
+}
+/*------------CONNEXION-------------*/
+.form-style-connexion{
+	font-size: 150%;
+    font-family: 'medusa';
+	width: 500px;
+	padding: 30px;
+	background: rgba(255, 255, 255);
+	margin: 50px auto;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+.form-style-connexion h2{
+	background: #4D4D4D;
+	text-transform: uppercase;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: #797979;
+    font-size: 100%;
+    font-family: 'medusa';
+	font-weight: 100;
+	padding: 20px;
+	margin: -30px -30px 30px -30px;
+}
+
+.form-style-connexion input[type="password"],
+.form-style-connexion input[type="text"],
+.form-style-connexion select 
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	display: block;
+	width: 100%;
+	padding: 7px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	margin-bottom: 10px;
+	font-size: 80%;
+    height: 45px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.form-style-connexion textarea{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+.form-style-connexion input[type="button"], 
+.form-style-connexion input[type="submit"]{
+	-moz-box-shadow: inset 0px 1px 0px 0px rgb(19, 68, 53);
+	-webkit-box-shadow: inset 0px 1px 0px 0px rgb(19, 68, 53);
+	box-shadow: inset 0px 1px 0px 0px rgb(19, 68, 53);
+	background-color: rgb(19, 68, 53);
+	border: 1px solid rgb(19, 68, 53);
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-size: 70%;
+    font-family: 'medusa';
+	padding: 8px 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.form-style-connexion input[type="button"]:hover, 
+.form-style-connexion input[type="submit"]:hover {
+	background:linear-gradient(to bottom, rgb(19, 68, 53) 5%, rgb(19, 68, 53)100%);
+	background-color:rgb(19, 68, 53);
+}
+.error{
+    font-family: 'medusa';
+    font-size: 170%;
+    color: white;
+    text-decoration:underline;
+    text-align:center;
+    display:flex;
+    justify-content: center;
     
+}
+
+/*----------------BOOK------------*/
+.book{
+    background-color: rgba(255, 255, 255, 0.25);
+    grid-area: 2 / 2 / 5 / 5;
+    text-align: center;
+    height: auto;
+    padding: 5%;
+}
+#book-h1{
+    font-family: 'morris';
+    font-size: 170%;
+    line-height: 5%;
+}
+#text-book{
+    font-family: 'morris';
+    font-size: 100%;
+    line-height: 5%;
 }

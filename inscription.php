@@ -2,12 +2,34 @@
 <?php
 
 session_start();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accueil</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+    <nav>
+        <li><a class="link-nav" href="index.php">Home</a></li>
+        <li><a class="link-nav" href="inscription.php">Sign in</a></li>
+        <li><a class="link-nav" href="connexion.php">Log in</a></li>
+        <img id="logo-nav" src="image/sigil.png"/>
+        <li><a class="link-nav" href="profil.php">Profil</a></li>
+        <li><a class="link-nav" href="livre-or.php">The book</a></li>
+        <li><a class="link-nav"  href="commentaire.php">Comments</a></li>
+    </nav>
+    </header>
+    <main>
+        <?php
 $login = "";
 $password = "";
 
 if (empty($_SESSION['login'])) {
     ?>
-    <form action="inscription.php" method="post">
+    <div class="form-style-connexion">
+    <form action="" method="post">
         Login: <input type="text" name="login" value="" required/>
 
         Password: <input type="password" name="password" value="" required/>
@@ -16,6 +38,7 @@ if (empty($_SESSION['login'])) {
 
         <input type="submit" name="connexion" value="Connexion" />
     </form>
+</div> 
 <?php
 
 
@@ -25,7 +48,13 @@ if (empty($_SESSION['login'])) {
 
         if($_POST['password'] != $_POST['cpassword'])
         {
-            echo "Your password and confirmed password doesn't match";
+            ?>
+            <div class="error">
+                <span>
+                   Your password and confirmed password doesn't match
+             </span>
+             </div>
+             <?php
         }
         else{
 
@@ -37,15 +66,19 @@ if (empty($_SESSION['login'])) {
 
         if(!empty($resultat))
         {
-            echo "Your login is already taken by a worshiper of Chtulhu";
+            ?>
+            <div class="error">
+                <span>
+                   Your login is already taken by a worshiper of Chtulhu
+             </span>
+             </div>
+             <?php
         }
         else
         {
             $requete2 = "INSERT INTO utilisateurs(login, password) VALUES (\"$login\",\"$password\")";
             $query = mysqli_query($connexion, $requete2);
-            $_SESSION['login'] = $_POST['login'] ;
-            $_SESSION['password'] = $_POST['password'] ;
-            header("location:index.php");
+            header("location:connexion.php");
         }
     }
      
@@ -53,7 +86,13 @@ if (empty($_SESSION['login'])) {
 }
 else
 {
-    echo "You are already a worshiper of Chtulu";
+    ?>
+    <div class="error">
+        <span>
+           You are already known as a worshiper of Chtulhu
+     </span>
+     </div>
+     <?php
 }
 
 ?>
