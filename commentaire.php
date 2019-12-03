@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Accueil</title>
+    <title>Comments</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 

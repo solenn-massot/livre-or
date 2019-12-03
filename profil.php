@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Accueil</title>
+    <title>Profil</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
