@@ -39,6 +39,7 @@ session_start();
 
         $connexion = mysqli_connect("localhost", "root", "", "livreor");
         $requete = "SELECT utilisateurs.login, commentaires.commentaire, date_format(commentaires.date,\"%e %M %Y\") FROM utilisateurs, commentaires WHERE commentaires.id_utilisateur = utilisateurs.id ORDER BY date ASC";
+        //ASC puisque mon css est en flex column reverse
         $query = mysqli_query($connexion, $requete);
         $resultat = mysqli_fetch_all($query);
         foreach ($resultat as list($a, $b, $c)) {
@@ -53,3 +54,6 @@ session_start();
         <?php
         }
         ?>
+        </main>
+    </body>
+        </html>

@@ -98,3 +98,6 @@ else
 }
 
 ?>
+</main>
+</body>
+</html>

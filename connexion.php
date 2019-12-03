@@ -127,4 +127,6 @@ else{
 </main>
     <?php
 }
-
+?>
+</body>
+</html>

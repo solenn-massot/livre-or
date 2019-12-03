@@ -96,3 +96,6 @@ else
 }
 
 ?>
+</main>
+</body>
+</html>
