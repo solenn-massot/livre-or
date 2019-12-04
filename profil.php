@@ -57,18 +57,21 @@ if(isset($_POST['connexion']))
              </div>
              <?php
     }
-    else
+      else
     {
         $connexion = mysqli_connect("localhost","root","","livreor");
-        $requete = "SELECT * FROM utilisateurs WHERE login = \"$newlogin\" AND password = \"$password\"";
+        $requete = "SELECT login FROM utilisateurs WHERE login = \"$newlogin\"";
         $query = mysqli_query($connexion, $requete);
-        $resultat = mysqli_fetch_array($query);
-        $id = $resultat['id'];
+        $resultat = mysqli_fetch_all($query);
 
-        if(!empty($resultat))
+        if(empty($resultat))
         {
+            $requete2 = "SELECT * FROM utilisateurs WHERE login = \"$login\"";
+            $query2 = mysqli_query($connexion, $requete2);
+            $resultat2 = mysqli_fetch_assoc($query2);
+            $id = $resultat2['id'];
             $update = "UPDATE utilisateurs SET login =\"$newlogin\", password = \"$newpassword\" WHERE id = \"$id\"";
-            $query2 = mysqli_query($connexion, $update);
+            $query3 = mysqli_query($connexion, $update);
             $_SESSION['login'] = $newlogin ; 
             $_SESSION['password'] = $newpassword;
             header("location:profil.php");
